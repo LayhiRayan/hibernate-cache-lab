@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.ehcache.org/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+  <cache alias="com.example.model.Auteur">
+    <expiry><ttl unit="minutes">60</ttl></expiry>
+    <resources><heap unit="entries">1000</heap></resources>
+  </cache>
+  <cache alias="com.example.model.Livre">
+    <expiry><ttl unit="minutes">60</ttl></expiry>
+    <resources><heap unit="entries">1000</heap></resources>
+  </cache>
+  <cache alias="com.example.model.Auteur.livres">
+    <expiry><ttl unit="minutes">60</ttl></expiry>
+    <resources><heap unit="entries">1000</heap></resources>
+  </cache>
+  <!-- Les horodatages ne doivent pas expirer avant les resultats des requetes. -->
+  <cache alias="default-update-timestamps-region">
+    <expiry><none/></expiry>
+    <resources><heap unit="entries">10000</heap></resources>
+  </cache>
+  <cache alias="default-query-results-region">
+    <expiry><ttl unit="minutes">60</ttl></expiry>
+    <resources><heap unit="entries">1000</heap></resources>
+  </cache>
+</config>
